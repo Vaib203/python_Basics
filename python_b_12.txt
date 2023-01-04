@@ -1,0 +1,53 @@
+1. In what modes should the PdfFileReader() and PdfFileWriter() File objects will be opened?
+Ans:- For PdfFileReader() file objects should be opened in rb -> read binary mode, Whereas for PdfFileWriter() file objects should be opened in wb -> write binary mode.
+
+2. From a PdfFileReader object, how do you get a Page object for page 5?
+Ans:- You can get a Page object by calling the getPage() method ➋ on a PdfFileReader object and passing it the page number of the page you're interested in.
+
+3. What PdfFileReader variable stores the number of pages in the PDF document?
+Ans:- The total number of pages in the document is stored in the numPages attribute of a PdfFileReader object.
+
+4. If a PdfFileReader object’s PDF is encrypted with the password swordfish, what must you dobefore you can obtain Page objects from it?
+Ans:- If a PdfFileReader object's PDF is encrypted with the password swordfish and you're not aware of it. first read the Pdf using the PdfFileReader Class.
+
+5. What methods do you use to rotate a page?
+Ans:- Right-click the selected page or individual pages, and choose the "Rotate Page" option
+
+6. What is the difference between a Run object and a Paragraph object?
+Ans:- new Paragraph objects can be added only to the end of the document, and new Run objects can be added only to the end of a Paragraph object.
+
+7. How do you obtain a list of Paragraph objects for a Document object that’s stored in a variable named doc?
+Ans:- from docx import Document
+doc = Document("sample_file.docx") # Path of the Docx file
+print(doc.paragraphs) # Prints the list of Paragraph objects for a Document
+for paragraph in doc.paragraphs:
+    print(paragraph.text) # Prints the text in the paragraph
+
+8. What type of object has bold, underline, italic, strike, and outline variables?
+Ans: Run object has bold, underline, italic, strike, and outline variables. The text in a Word document is more than just a string. It has font, size, color, and other styling information 
+associated with it.
+A style in Word is a collection of these attributes. A Run object is a contiguous run of text with the same style. A new Run object is needed whenever the text style changes.
+
+9. What is the difference between False, True, and None for the bold variable?
+bold = True  # Style Set to Bold
+bold = False # Style Not Set to Bold
+bold = None # Style is Not Applicable
+
+10. How do you create a Document object for a new Word document?
+Ans:- # Example Program
+from docx import Document
+document = Document()
+document.add_paragraph("Learn python programming")
+document.save('mydocument.docx')
+
+11. How do you add a paragraph with the text 'Hello, there!' to a Document object stored in a variable named doc?
+Ans:- # Example Program
+from docx import Document
+doc = Document()
+doc.add_paragraph('Hello, there!')
+doc.save('hello.docx')
+
+12. What integers represent the levels of headings available in Word documents?
+Ans: The levels for a heading in a word document can be specified by using the level attribute inside the add_heading method. 
+There are a total of 5 levels statring for 0 t0 4. where level 0 makes a headline with the horizontal line below the text, whereas the heading level 1 is the main heading. 
+Similarly, the other headings are sub-heading with their's font-sizes in decreasing order.
